@@ -66,5 +66,49 @@ Task 3: Evaluation Method
   evidence span is a valid verbatim substring of the journal text.
   
   Metrics:
-  We report object-level precision, recall, and F1 score, along with polarity
-  accuracy, bucket accuracy, and evidence coverage rate.
+  We report object-level precision, recall, and F1 score evidence coverage rate.
+
+Task 4: Mock Evaluation
+
+The mock evaluation was executed on Journal entry no.3 and 5.
+
+Gold objects: 
+{"journal_id": "J003", "items": [{"domain": "food", "evidence_span": "Dinner: paneer bhurji + 2 rotis", "polarity": "present", "intensity_bucket": "unknown", "time_bucket": "today"}, {"domain": "emotion", "evidence_span": "Mood was actually good—felt calm and grateful", "polarity": "present", "arousal_bucket": "low", "time_bucket": "today"}, {"domain": "symptom", "evidence_span": "I got super sleepy", "polarity": "present", "intensity_bucket": "high", "time_bucket": "today"}, {"domain": "symptom", "evidence_span": "stomach felt bloated", "polarity": "present", "intensity_bucket": "medium", "time_bucket": "today"}, {"domain": "mind", "evidence_span": "Brain felt clear, focused while reading", "polarity": "present", "intensity_bucket": "low", "time_bucket": "today"}]}
+
+Predicted Objects:
+[{'domain': 'symptom', 'evidence_span': 'bloated', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}, {'domain': 'food', 'evidence_span': 'paneer', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}, {'domain': 'emotion', 'evidence_span': 'calm', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}, {'domain': 'mind', 'evidence_span': 'focused', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}]
+
+| Predicted Evidence | Gold Evidence                                  | Domain     | Match  | Reason               |
+
+| paneer             | Dinner: paneer bhurji + 2 rotis                | food       | yes    | Substring overlap    |
+| bloated            | stomach felt bloated                           | symptom    | yes    | Substring overlap    |
+| calm               | Mood was actually good—felt calm and grateful  | emotion    | yes    | Substring overlap    |
+| focused            | Brain felt clear, focused while reading        | mind       | yes    | Substring overlap    |
+
+Metrics:
+TP=4
+FP=0
+FN=0
+Precision = Recall = F1 = 1
+Evidence Coverage = 4/4 = 1
+
+Gold objects:
+{"journal_id": "J005", "items": [{"domain": "food", "evidence_span": "ate biryani (small bowl) + raita", "polarity": "present", "intensity_bucket": "unknown", "time_bucket": "today"}, {"domain": "symptom", "evidence_span": "Felt heartburn after that", "polarity": "present", "intensity_bucket": "medium", "time_bucket": "today"}, {"domain": "symptom", "evidence_span": "a slight nausea", "polarity": "present", "intensity_bucket": "low", "time_bucket": "today"}, {"domain": "emotion", "evidence_span": "irritated + impatient", "polarity": "present", "arousal_bucket": "high", "time_bucket": "today"}, {"domain": "mind", "evidence_span": "racing thoughts at night", "polarity": "present", "intensity_bucket": "high", "time_bucket": "last_night"}]}
+
+Predicted Objects:
+{'domain': 'symptom', 'evidence_span': 'nausea', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}, {'domain': 'symptom', 'evidence_span': 'heartburn', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}, {'domain': 'food', 'evidence_span': 'biryani', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}, {'domain': 'emotion', 'evidence_span': 'irritated', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}, {'domain': 'mind', 'evidence_span': 'thoughts', 'polarity': 'present', 'intensity_bucket': 'unknown', 'time_bucket': 'unknown'}
+
+| Predicted | Gold Evidence             | Domain  | Match | Reason    |
+
+| nausea    | a slight nausea           | symptom | yes     | substring |
+| heartburn | Felt heartburn after that | symptom | yes     | substring |
+| biryani   | ate biryani (small bowl)  | food    | yes     | substring |
+| irritated | irritated + impatient     | emotion | yes     | substring |
+| thoughts  | racing thoughts at night  | mind    | yes     | substring |
+
+Metrics:
+TP=5
+FP=0
+FN=0
+Precision = Recall = F1 = 1
+Evidence Coverage = 5/5 = 1
