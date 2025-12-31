@@ -1,0 +1,30 @@
+{
+  "description": "Schema for evidence-grounded semantic extraction from Ashwam journals",
+  "fields": {
+    "domain": {
+      "type": "string",
+      "allowed_values": ["symptom", "food", "emotion", "mind"],
+      "constrained": true
+    },
+    "evidence_span": {
+      "type": "string",
+      "constrained": false,
+      "description": "Verbatim substring copied from journal text"
+    },
+    "polarity": {
+      "type": "string",
+      "allowed_values": ["present", "absent", "uncertain"],
+      "constrained": true
+    },
+    "intensity_bucket": {
+      "type": "string",
+      "allowed_values": ["low", "medium", "high", "unknown"],
+      "constrained": true
+    },
+    "time_bucket": {
+      "type": "string",
+      "allowed_values": ["today", "last_night", "past_week", "unknown"],
+      "constrained": true
+    }
+  }
+}
