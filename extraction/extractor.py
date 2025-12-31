@@ -1,5 +1,5 @@
-SympVocab={"headache", "tightness", "bloated", "soreness", "heartburn", "nausea", "heavy", "pain", "sinus", "cramps"}
-FoodVocab={"coffee", "tea", "dinner", "lunch", "chai", "rice", "dal", "achar", "breakfast", "paneer", "oats", "biryani", "toast", "idli", "chips", "quinoa"}
+SympVocab={"headache", "tightness", "bloated", "soreness", "nausea", "heavy", "pain", "sinus", "cramps"}
+FoodVocab={"coffee", "chai", "rice", "dal", "achar", "paneer", "oats", "biryani", "toast", "idli", "chips", "quinoa"}
 EmoVocab={"anxious", "playful", "irritated", "calm", "stressed", "edgy", "nervous"}
 MindVocab={"overthinking", "confused", "focused", "distracted", "worried", "thoughts"}
 
