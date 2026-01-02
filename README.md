@@ -115,3 +115,13 @@
   
   Failure Mode 4: Vocabulary Coverage Gaps:
   Concepts not present in the predefined vocabularies are not extracted, leading to false negatives. This behavior is detectable during evaluation and can be mitigated by extending vocabularies without modifying the schema or scorer.
+
+
+
+CLI Usage:
+This project provides a simple CLI to run the evidence-grounded extraction pipeline end to end.
+
+Run the Pipeline:
+From the root of the repository, execute:
+
+"python cli/run.py"
